@@ -5,3 +5,10 @@ set number
 set expandtab
 set tabstop=2
 set shiftwidth=2
+
+" Theme & Syntax coloring
+filetype on
+syntax on
+if (has("termguicolors"))
+  set termguicolors
+endif
