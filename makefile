@@ -11,17 +11,17 @@ all: $(NAME)
 	@echo "Veuillez exécuter: ./$(NAME)"
 
 $(NAME): $(NAME).o
-	@echo -n "Édition des liens... "
+	@echo "Édition des liens..."
 	@$(LD) $(NAME).o -o $(NAME) -e $(ENTRY) -lSystem -syslibroot `xcrun -sdk macosx --show-sdk-path` -arch arm64
 	@echo "OK."
 
 $(NAME).o: $(NAME).s
-	@echo -n "Assemblage... "
+	@echo "Assemblage... "
 	@$(AS) -o $(NAME).o $(NAME).s
 	@echo "OK."
 
 clean:
-	@echo -n "Nettoyage... "
+	@echo "Nettoyage... "
 	@rm -f *.o $(NAME)
 	@echo "OK."
 
